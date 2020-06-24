@@ -28,7 +28,7 @@ class ProjectCard extends React.Component {
             component="img"
             alt="Run Tracker App"
             height="220px"
-            image="/goldfishtrainers.png"
+            image="./goldfishtrainers.png"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
