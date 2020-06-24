@@ -35,10 +35,10 @@ class ProjectCard extends React.Component {
             <Typography gutterBottom variant="h5" component="h2">
               Audition Remake
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p" style={{height:'120px'}}>
+            <Typography variant="body2" color="textSecondary" component="p" style={{height:'140px'}}>
                 Using only javascript to create a similar game to “Audition” (a music rhythim game) on webpage.
             </Typography>
-            <Typography variant="aption" color="textSecondary" style={{display:"flex"}}>
+            <Typography variant="caption" color="textSecondary" style={{display:"flex"}}>
                 &#123;  HTML | CSS | Javascript  &#125;
             </Typography>
           </CardContent>

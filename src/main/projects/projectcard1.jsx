@@ -35,10 +35,10 @@ class ProjectCard extends React.Component {
             <Typography gutterBottom variant="h5" component="h2">
               Run Tracker App
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p" style={{height:'120px'}}>
+            <Typography variant="body2" color="textSecondary" component="p" style={{height:'140px'}}>
               A running app that tracks distance, pace, time, this app features the ability to display graphs with average distance and pace by comparing past running records, as well as displaying average pace for a single run.
             </Typography>
-            <Typography variant="aption" color="textSecondary" style={{display:"flex"}}>
+            <Typography variant="caption" color="textSecondary" style={{display:"flex"}}>
                 &#123;  Ruby on Rails | ReactJS | ProgreSQL  &#125;
             </Typography>
           </CardContent>

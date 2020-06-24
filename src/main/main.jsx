@@ -2,6 +2,7 @@ import React from 'react';
 import Intro from './intro';
 import Projects from './projects';
 import Particles from 'react-particles-js';
+import Appbar from './components/appbar';
 
 
 function Main() {
@@ -31,6 +32,7 @@ function Main() {
             width: "100%",
             height: "100%"}}/>
       <Intro/>
+      <Appbar/>
       <Projects/>
     </div>
   );

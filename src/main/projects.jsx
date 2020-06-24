@@ -2,15 +2,35 @@ import React from 'react';
 import ProjectCard1 from './projects/projectcard1';
 import ProjectCard2 from './projects/projectcard2';
 import ProjectCard3 from './projects/projectcard3';
-
-
 import {Grid, Container} from '@material-ui/core/';
 
+let rect;
+
 class Project extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      padding:{paddingTop:'0px'},
+    }
+    this.handleScroll = this.handleScroll.bind(this)
+  }
+
+  handleScroll(){
+    if (window.pageYOffset > rect) {
+      this.setState({padding:{paddingTop:'56px'}})
+    } else {
+      this.setState({padding:{paddingTop:'0px'}})
+    }
+  }
+  componentDidMount(){
+    window.addEventListener('scroll', this.handleScroll);
+    let bar = document.getElementById('appbar')
+    rect =  bar.offsetTop;
+  }
 
   render(){
     return (
-      <Container fixed>
+      <Container fixed style={this.state.padding}>
         <Grid container justify='center' style={{margin:'10px 0'}} spacing={2}>
           <Grid item xs={12} container justify="center">
             <div className='projecttitle'>Projects</div>

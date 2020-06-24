@@ -35,10 +35,10 @@ class ProjectCard extends React.Component {
             <Typography gutterBottom variant="h5" component="h2">
               Goldfish Trainers
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p" style={{height:'120px'}}>
+            <Typography variant="body2" color="textSecondary" component="p" style={{height:'140px'}}>
                 A website for dedicated goldfish lovers, which allow users to sign up training programs for goldfish, while a “fishtagrams” for users to post pictures while commenting and favourite other post.
             </Typography>
-            <Typography variant="aption" color="textSecondary" style={{display:"flex"}}>
+            <Typography variant="caption" color="textSecondary" style={{display:"flex"}}>
                 &#123;  Ruby on Rails | Javascript | ProgreSQL &#125;
             </Typography>
           </CardContent>
