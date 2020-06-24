@@ -26,7 +26,7 @@ class Intro extends React.Component {
         direction="row"
         justify="center"
         alignItems="center"
-        style={{backgroundColor:'#212121',height:'500px'}}>
+        style={{backgroundColor:'#212121',height:'100vh'}}>
         <div className='introfont' >
           <div>My name is <span style={{color:'#2962ff'}}><b>Kwan Sing</b></span>.</div>
           <div>I'm a full-stack developer.</div>

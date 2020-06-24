@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
 
 
 
@@ -22,13 +23,13 @@ class ProjectCard extends React.Component {
   render() {
   const { classes } = this.props;
   return (
-      <Card className={classes.root}>
+      <Card elevation={5} className={classes.root}>
         <CardActionArea>
           <CardMedia
             component="img"
             alt="Run Tracker App"
             height="220px"
-            image="./goldfishtrainers.png"
+            image={process.env.PUBLIC_URL+"/goldfishtrainers.png"}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
@@ -37,9 +38,13 @@ class ProjectCard extends React.Component {
             <Typography variant="body2" color="textSecondary" component="p" style={{height:'120px'}}>
                 A website for dedicated goldfish lovers, which allow users to sign up training programs for goldfish, while a “fishtagrams” for users to post pictures while commenting and favourite other post.
             </Typography>
+            <Typography variant="aption" color="textSecondary" style={{display:"flex"}}>
+                &#123;  Ruby on Rails | Javascript | ProgreSQL &#125;
+            </Typography>
           </CardContent>
         </CardActionArea>
-        <CardActions>
+        <Divider/>
+        <CardActions  style={{display:'flex', justifyContent:'space-around'}}>
           <Button size="small" color="primary">
             Demo
           </Button>
