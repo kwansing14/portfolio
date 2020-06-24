@@ -1,5 +1,4 @@
 import React from 'react';
-import Particles from 'react-particles-js';
 import {Button, Grid} from '@material-ui/core';
 import { withStyles } from "@material-ui/core/styles";
 
