@@ -28,7 +28,6 @@ class ButtonAppBar extends React.Component {
     this.handleScroll = this.handleScroll.bind(this)
   }
   componentDidMount(){
-    console.log('LOOKK MOUNTED AGAIN')
     window.addEventListener('scroll', this.handleScroll);
     let bar = document.getElementById('appbar')
     rect =  bar.offsetTop;
@@ -46,15 +45,22 @@ class ButtonAppBar extends React.Component {
   const { classes } = this.props;
   return (
       <div className={classes.root}>
-        <AppBar id='appbar' position={this.state.pos} style={{backgroundColor:'#304ffe'}}>
+        <AppBar id='appbar' position={this.state.pos} style={{backgroundColor:'#131313', borderBottom:'4px solid #2962FF'}}>
+
           <Toolbar>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            </IconButton>
-            <Typography variant="h6" className={classes.title}>
-              News
-            </Typography>
-            <Button color="inherit">Login</Button>
-          </Toolbar>
+            <div>
+              Home
+            </div>
+            &nbsp;
+            <div>
+              Projects
+            </div>
+            &nbsp;
+
+            <div>
+              Profile
+            </div>
+            </Toolbar>
         </AppBar>
       </div>
     );

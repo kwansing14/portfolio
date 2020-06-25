@@ -13,7 +13,11 @@ const styles = theme => ({
 })
 
 class Intro extends React.Component {
-
+  handleClick(){
+    console.log("checl")
+    let appbar = document.getElementById('appbar');
+    appbar.scrollIntoView({behavior: 'smooth'});
+  }
   componentDidMount(){
     console.log('mounted!')
   }
@@ -29,11 +33,18 @@ class Intro extends React.Component {
         <div className='introfont' >
           <div>My name is <span style={{color:'#2962ff'}}><b>Kwan Sing</b></span>.</div>
           <div>I'm a full-stack developer.</div>
-          <Button
-          className={classes.button}
-          style={{border:'2px solid white',borderRadius:'0px',color:'white',margin:'10px',padding:'4px 14px'}}>
-            View my projects
-          </Button>
+            <Button
+            className={classes.button}
+            onClick={()=>{this.handleClick()}}
+            style={{
+              border:'2px solid white',
+              borderRadius:'0px',
+              color:'white',
+              margin:'10px',
+              padding:'4px 14px',
+              behavior:'smooth'}}>
+              View my projects
+            </Button>
         </div>
       </Grid>
     );
