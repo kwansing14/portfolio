@@ -44,50 +44,142 @@ const styles = theme => ({
 
 class FormPropsTextFields extends React.Component {
   // SmtpJS.com
-
+  constructor(){
+    super()
+    this.state = {
+      nameValue:'',
+      emailValue:'',
+      msgValue:'',
+      nameStyle:{display:'none'},
+      emailStyle:{display:'none'},
+      msgStyle:{display:'none'},
+      successStyle:{display:'none'}
+    }
+    this.nameChange = this.nameChange.bind(this)
+    this.emailChange = this.emailChange.bind(this)
+    this.msgChange = this.msgChange.bind(this)
+  }
+  nameChange(e) {
+    console.log(e.target.value)
+    this.setState({
+        nameValue: e.target.value
+    })
+  }
+  emailChange(e) {
+    console.log(e.target.value)
+    this.setState({
+        emailValue: e.target.value
+    })
+  }
+  msgChange(e) {
+    console.log(e.target.value)
+    this.setState({
+        msgValue: e.target.value
+    })
+  }
   sendEmail(e) {
-    e.preventDefault();    //This is important, i'm not sure why, but the email won't send without it
+    e.preventDefault();
+    console.log(e.target)
+      if(this.state.nameValue === '') {
+        console.log('name is empty')
+        this.setState({
+          nameStyle:{display:'block'},
+          emailStyle:{display:'none'},
+          msgStyle:{display:'none'}
+        })
+      } else if (this.state.emailValue === '') {
+        console.log('email is empty')
+        this.setState({
+          nameStyle:{display:'none'},
+          emailStyle:{display:'block'},
+          msgStyle:{display:'none'}
 
-    emailjs.sendForm('gmail', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+        })
+      } else if (this.state.msgValue === '' ) {
+        console.log('msg is empty')
+        this.setState({
+          nameStyle:{display:'none'},
+          emailStyle:{display:'none'},
+          msgStyle:{display:'block'}
+        })
+      } else {
+      emailjs.sendForm('gmail', 'kwansing_s_portfolio', e.target, 'user_gdRooiZyuQdafXReVGm1l')
       .then((result) => {
-          window.location.reload()  //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
+          this.setState({
+            nameValue:'',
+            emailValue:'',
+            msgValue:'',
+            nameStyle:{display:'none'},
+            emailStyle:{display:'none'},
+            msgStyle:{display:'none'},
+            successStyle:{display:'block'}
+          })
       }, (error) => {
           console.log(error.text);
       });
+      }
   }
 
   render (){
   const {classes} = this.props;
     return (
-      <form className={classes.root} noValidate autoComplete="off">
+      <div>
+      <form id='mailform'
+            className={classes.root}
+            noValidate
+            autoComplete="off"
+            onSubmit={(e)=>{this.sendEmail(e)}}>
         <div>
           <TextField
-            id="outlined-password-input"
+            id='name'
             label="Name"
             variant="outlined"
+            type="text"
             name="name"
+            value={this.state.nameValue}
+            onChange={(e)=>{this.nameChange(e)}}
           />
         </div>
         <div>
           <TextField
-            id="outlined-password-input"
+            id='email'
             label="Email"
             variant="outlined"
+            type="email"
             name="email"
+            value={this.state.emailValue}
+            onChange={(e)=>{this.emailChange(e)}}
           />
         </div>
         <div>
           <TextField
-            id="outlined-password-input"
+            id='msg'
             label="Message"
-            autoComplete="current-password"
+            multiline
             variant="outlined"
+            type="text"
             name="message"
+            value={this.state.msgValue}
+            onChange={(e)=>{this.msgChange(e)}}
           />
+        </div>
+        <div style={this.state.nameStyle}>
+          Please enter your name.
+        </div>
+        <div style={this.state.emailStyle}>
+          Please enter your email.
+        </div>
+        <div style={this.state.msgStyle}>
+          Message section is empty.
+        </div>
+        <div style={this.state.successStyle}>
+          Your message is sent successfully.
         </div>
         <div>
           <Button
             className={classes.button}
+            type="submit"
+            value="Send"
             style={{
               border:'2px solid white',
               borderRadius:'0px',
@@ -99,6 +191,7 @@ class FormPropsTextFields extends React.Component {
             </Button>
         </div>
       </form>
+    </div>
     );
   }
 }

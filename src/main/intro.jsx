@@ -24,7 +24,6 @@ class Intro extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-
       <Grid container
         direction="row"
         justify="center"
