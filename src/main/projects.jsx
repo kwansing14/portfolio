@@ -16,8 +16,8 @@ class Project extends React.Component {
   }
 
   handleScroll(){
-    if (window.pageYOffset > rect) {
-      this.setState({padding:{paddingTop:'56px'}})
+    if (window.pageYOffset >= rect) {
+      this.setState({padding:{paddingTop:'64px'}})
     } else {
       this.setState({padding:{paddingTop:'0px'}})
     }
@@ -30,7 +30,7 @@ class Project extends React.Component {
 
   render(){
     return (
-      <Container fixed style={this.state.padding}>
+      <Container id='projecttitle' fixed style={this.state.padding}>
         <Grid container justify='center' style={{margin:'10px 0'}} spacing={2}>
           <Grid item xs={12} container justify="center">
             <div className='projecttitle'>Projects</div>

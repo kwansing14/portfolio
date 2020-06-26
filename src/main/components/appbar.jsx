@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
+
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -19,7 +20,6 @@ const styles = theme => ({
 let rect;
 
 class ButtonAppBar extends React.Component {
-
   constructor(){
     super()
     this.state = {
@@ -34,11 +34,21 @@ class ButtonAppBar extends React.Component {
   }
 
   handleScroll(){
-    if (window.pageYOffset > rect) {
+    if (window.pageYOffset >= rect) {
       this.setState({pos:"fixed"})
     } else {
       this.setState({pos:"static"})
     }
+  }
+  homeClick(){
+    console.log('click')
+    let appbar = document.getElementById('introcontainer');
+    appbar.scrollIntoView({behavior: 'smooth'});
+  }
+  projectClick(){
+    console.log('click')
+    let appbar = document.getElementById('projecttitle');
+    appbar.scrollIntoView({behavior: 'smooth'});
   }
 
   render() {
@@ -48,18 +58,14 @@ class ButtonAppBar extends React.Component {
         <AppBar id='appbar' position={this.state.pos} style={{backgroundColor:'#131313', borderBottom:'4px solid #2962FF'}}>
 
           <Toolbar>
-            <div>
+            <Button onClick={()=>{this.homeClick()}} style={{color:'white'}}>
               Home
-            </div>
+            </Button>
             &nbsp;
-            <div>
+            <Button onClick={()=>{this.projectClick()}} style={{color:'white'}}>
               Projects
-            </div>
+            </Button>
             &nbsp;
-
-            <div>
-              Profile
-            </div>
             </Toolbar>
         </AppBar>
       </div>
