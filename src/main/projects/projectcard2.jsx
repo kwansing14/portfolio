@@ -1,4 +1,5 @@
 import React from 'react';
+import GFModal from './modal/goldfishdemo';
 
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -45,13 +46,11 @@ class ProjectCard extends React.Component {
         </CardActionArea>
         <Divider/>
         <CardActions  style={{display:'flex', justifyContent:'space-around'}}>
-          <Button size="small" color="primary">
-            Demo
-          </Button>
-          <Button size="small" color="primary">
+          <GFModal/>
+          <Button size="small" target='_blank' href="https://github.com/kwansing14/Goldfish-Training-Project" color="primary">
             Github
           </Button>
-          <Button size="small" color="primary">
+          <Button size="small" target='_blank' href='https://goldfish-trainerds.herokuapp.com' color="primary">
             Heroku
           </Button>
         </CardActions>

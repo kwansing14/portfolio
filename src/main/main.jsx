@@ -1,7 +1,6 @@
 import React from 'react';
 import Intro from './intro';
 import Projects from './projects';
-import Profile from './profile';
 import Particles from 'react-particles-js';
 import Appbar from './components/appbar';
 import BottomAppbar from './components/bottomappbar';
@@ -38,7 +37,6 @@ class Main extends React.Component {
               height: "100%"}}/>
         <Intro/>
         <Appbar ref={this.myRef}  />
-        <Profile/>
         <Projects/>
         <BottomAppbar/>
       </div>

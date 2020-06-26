@@ -1,4 +1,5 @@
 import React from 'react';
+import RtModal from './modal/runtrackerdemo';
 
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -19,6 +20,19 @@ const styles = theme => ({
 });
 
 class ProjectCard extends React.Component {
+  handleOpen(){
+    console.log('demo leh')
+  }
+
+  state = { show: false };
+
+  showModal = () => {
+    this.setState({ show: true });
+  };
+
+  hideModal = () => {
+    this.setState({ show: false });
+  };
 
   render() {
   const { classes } = this.props;
@@ -45,13 +59,11 @@ class ProjectCard extends React.Component {
         </CardActionArea>
         <Divider/>
         <CardActions style={{display:'flex', justifyContent:'space-around'}}>
-          <Button size="small" color="primary">
-            Demo
-          </Button>
-          <Button size="small" color="primary">
+          <RtModal/>
+          <Button size="small" target='_blank' href='https://github.com/kwansing14/run-tracker' color="primary">
             Github
           </Button>
-          <Button size="small" color="primary">
+          <Button size="small" target='_blank' href='https://sei22-run-tracker.herokuapp.com/' color="primary">
             Heroku
           </Button>
         </CardActions>

@@ -1,4 +1,6 @@
 import React from 'react';
+import AudiModal from './modal/auditiondemo';
+
 
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -45,14 +47,12 @@ class ProjectCard extends React.Component {
         </CardActionArea>
         <Divider/>
         <CardActions  style={{display:'flex', justifyContent:'space-around'}}>
-          <Button size="small" color="primary">
-            Demo
-          </Button>
-          <Button size="small" color="primary">
+          <AudiModal/>
+          <Button target='_blank' href='https://github.com/kwansing14/Audition-Remake' size="small" color="primary">
             Github
           </Button>
-          <Button size="small" color="primary">
-            Heroku
+          <Button target='_blank' href='https://kwansing14.github.io/Audition-Remake' size="small" color="primary">
+            Github.io
           </Button>
         </CardActions>
       </Card>
